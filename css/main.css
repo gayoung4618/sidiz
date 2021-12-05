@@ -1,0 +1,1138 @@
+@charset 'utf-8';
+@import url(font/font.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    color: #000;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    font-family: "Malgun Gothic", "Apple SD Gothic Neo", Dotum, sans-serif;
+}
+
+/* 공통요소 */
+.container {
+    position: relative;
+    display: block;
+    max-width: 122rem;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+/* 안내창 */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999999;
+}
+
+.modal-cont {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    width: 550px;
+    height: 300px;
+    background: #fff;
+    border-radius: 30px 0 30px 0;
+    padding: 50px;
+}
+
+.modal-cont p {
+    position: relative;
+    display: block;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 50px;
+}
+
+.modal-cont span {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1.4;
+    text-align: center;
+    color: #000;
+}
+
+.modal-cont button {
+    position: relative;
+    display: block;
+    float: right;
+
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 100;
+    cursor: pointer;
+
+    margin-top: 30px;
+    border: 0;
+    line-height: 40px;
+    text-align: center;
+    padding: 0 30px;
+    border-radius: 4px;
+}
+
+.wrap {
+    position: relative;
+    display: block;
+}
+
+/* 상단 */
+.header {
+    z-index: 999999;
+    border-bottom: 1px solid #BCBCBC;
+}
+
+.header-top {
+    height: 4rem;
+    border-bottom: 1px solid #BCBCBC;
+}
+
+.header-t-wrap {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 168rem;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.search {
+    display: block;
+    border-right: 1px solid #BCBCBC;
+    border-left: 1px solid #BCBCBC;
+    margin-right: 2rem;
+}
+
+.search:hover {
+    background-color: #eee;
+}
+
+.search:hover.search>input {
+    background-color: #eee;
+}
+
+.search:hover.search>span {
+    color: #002BD2;
+}
+
+.search input {
+    width: 22rem;
+    height: auto;
+    border: none;
+    border-radius: 0.3rem;
+
+    font-size: 1.3rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 0.065rem;
+
+    margin-left: 2rem;
+    cursor: text;
+}
+
+.search-input-focus {
+    border: 0.2rem solid #000 !important;
+}
+
+.search span {
+    font-size: 1.3rem;
+    color: #000;
+    font-family: 'Centra No2', sans-serif;
+    line-height: 4rem;
+
+    margin: auto 2rem;
+    cursor: pointer;
+}
+
+.user-gnb {
+    position: relative;
+    display: block;
+}
+
+.user-menu {
+    position: relative;
+    display: block;
+}
+
+.user-menu>li {
+    position: relative;
+    float: left;
+    line-height: 4rem;
+    margin-left: 3.2rem;
+
+}
+
+.user-menu>li:nth-child(4),
+.user-menu>li:nth-child(5) {
+    margin-left: 4rem;
+}
+
+.user-menu>li>a {
+    font-size: 1.3rem;
+    color: #000;
+    font-weight: normal;
+    line-height: 4rem;
+    font-family: 'Noto Sans KR', sans-serif;
+
+    transition: color 0.3s;
+}
+
+.user-menu>li>a:hover {
+    color: #002BD2;
+}
+
+.compare,
+.cart {
+    font-size: 1.2rem !important;
+    font-family: "Malgun Gothic", "Apple SD Gothic Neo", Dotum, sans-serif !important;
+}
+
+.compare::before {
+    content: '';
+    position: absolute;
+    left: -1.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.4rem;
+    height: 1.4rem;
+    background: url('../images/compare.png') no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+
+}
+
+.compare:hover::before {
+    background: url('../images/compare_hover.png') no-repeat center;
+    background-size: cover;
+
+}
+
+.cart::before {
+    content: '';
+    position: absolute;
+    left: -1.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.4rem;
+    height: 1.4rem;
+    background: url('../images/cart.png') no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.cart:hover::before {
+    background: url('../images/cart_hover.png') no-repeat center;
+    background-size: cover;
+
+}
+
+.header-bottom {
+    position: relative;
+    display: block;
+    height: 6rem;
+    /* padding-left: 12rem;
+    padding-right: 13.7rem; */
+}
+
+.header-b-wrap {
+    position: relative;
+    display: block;
+    max-width: 168rem;
+    height: 100%;
+    margin: 0 auto;
+    /* padding-right: 2rem; */
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    float: left;
+}
+
+.logo img {
+    width: 8rem;
+    height: 2.4rem;
+}
+
+.menu-list {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.menu-list>li {
+    position: relative;
+    display: block;
+    float: left;
+    line-height: 6rem;
+    font-family: 'Centra No2', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 0;
+    margin-left: 6rem;
+    transition: color 0.5s;
+}
+
+.menu-list>li:hover {
+    color: #002bd2;
+}
+
+.menu-list>li:first-child {
+    margin-left: 0;
+}
+
+.submenu-1 {
+    position: absolute;
+    bottom: -31.8rem;
+    left: 0;
+    display: none;
+    height: auto;
+    background-color: #282828;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    z-index: 9;
+}
+
+.submenu-1 li {
+    width: 16.5rem;
+    height: auto;
+    padding-bottom: 2rem;
+    padding-left: 3.1rem;
+}
+
+.submenu-1 li :last-child {
+    padding-bottom: 0;
+}
+
+.submenu-1 li:nth-child(3) {
+    padding-top: 1.2rem;
+}
+
+.submenu-1 li a {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 400;
+    font-family: 'Centra No2'sans-serif;
+    line-height: 1.5;
+    color: transition 0.5s;
+}
+
+.submenu-1 li a:hover {
+    color: #002bd2;
+}
+
+.submenu-1 li span {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Centra No2'sans-serif;
+    line-height: 1.4;
+}
+
+.submenu-2 {
+    display: none;
+}
+
+/* visual */
+.visual {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 4rem 12rem 12rem 12rem;
+    border-bottom: 0.1rem solid #000;
+}
+
+.visual-wrap {
+    position: relative;
+    display: block;
+    max-width: 192rem;
+    height: auto;
+    margin: 0 auto;
+}
+
+.sw-visual {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.visual-box {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.visual-left {
+    position: relative;
+    display: block;
+    /* width: 48rem; */
+    width: 26.406%;
+    height: auto;
+    float: left;
+}
+
+.visual-tit {
+    position: relative;
+    display: block;
+    font-size: 6rem;
+    color: #000;
+    font-weight: 400;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    line-height: 1.33;
+    letter-spacing: -0.3rem;
+    padding-top: 10.7rem;
+}
+
+.visual-txt {
+    position: relative;
+    display: block;
+    font-size: 8rem;
+    color: #000;
+    font-weight: 700;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    line-height: 1.3;
+    letter-spacing: 0;
+    padding-top: 1.5rem;
+}
+
+.small-link {
+    position: relative;
+    padding-top: 4rem;
+    display: block;
+    font-size: 0;
+}
+
+.small-link>img {
+    position: relative;
+    display: inline-block;
+    width: 10rem;
+    height: 10rem;
+}
+
+.outlink-player {
+    position: absolute;
+    top: 4rem;
+    left: 6.7rem;
+    display: block;
+    width: 2.8rem;
+    height: 2.8rem;
+    background: url('../images/outlinkPlay.svg') no-repeat center;
+}
+
+.small-link-txt {
+    position: relative;
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #999;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin-left: 1.4rem;
+}
+
+.visual-main-img {
+    position: relative;
+    display: block;
+    float: right;
+    width: 61.25%;
+    /* max-width: 117.6rem; */
+    height: 90rem;
+    cursor: pointer;
+}
+
+.sw-visual-control {
+    position: absolute;
+    bottom: 16.7rem;
+    left: 0;
+}
+
+.sw-visual-control>button {
+    border: none;
+    width: 7.8rem;
+    height: 2.6rem;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.sw-visual-prev {
+    background: url('../images/slide_prev.png') no-repeat center;
+    margin-right: 2rem;
+}
+
+.sw-visual-prev:hover {
+    background: url('../images/slide_prevbl.png') no-repeat center;
+    margin-right: 2rem;
+}
+
+.sw-visual-next {
+    background: url('../images/slide_next.png') no-repeat center;
+}
+
+.sw-visual-next:hover {
+    background: url('../images/slide_nextbl.png') no-repeat center;
+}
+
+/* TASK CHAIR */
+.task {
+    padding-top: 8rem;
+    border-bottom: 0.1rem solid #000;
+}
+
+.task>.container {}
+
+.task-top {
+    position: relative;
+    display: block;
+    margin-bottom: 3.5rem;
+    overflow: hidden;
+}
+
+.product-tit {
+    font-size: 3.4rem;
+    color: #000;
+    font-weight: 400;
+    font-family: 'Centra No2', sans-serif;
+    line-height: 4.4rem;
+    float: left;
+}
+
+.product-more {
+    font-size: 1.3rem;
+    color: #002BD2;
+    font-family: 'Centra No2', sans-serif;
+    line-height: 1;
+    cursor: pointer;
+    margin-top: 2rem;
+    float: right;
+}
+
+.product-more:hover {
+    text-decoration: underline #002BD2;
+}
+
+.task-box {
+    position: relative;
+    display: block;
+}
+
+.task-box a {
+    position: relative;
+    display: block;
+}
+
+.task-box img:hover {
+    opacity: 0.8;
+}
+
+.task-box h3 {
+    position: relative;
+    display: block;
+    font-size: 5.5rem;
+    line-height: 1;
+    color: #000;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    padding-top: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+
+}
+
+.task-box p {
+    position: relative;
+    display: block;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: #000;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    margin-bottom: 8rem;
+    text-align: center;
+
+}
+
+.task-left {
+    float: left;
+}
+
+.task-box-1>a>img {
+    width: 560px;
+    height: 800px;
+}
+
+.task-box-3>a>img {
+    width: 560px;
+    height: 560px;
+}
+
+.task-right {
+    float: right;
+}
+
+
+.task-box-2>a>img {
+    width: 560px;
+    height: 680px;
+}
+
+.task-box-4>a>img {
+    width: 560px;
+    height: 460px;
+}
+
+/* KIDS CHAIR  */
+.kids {
+    position: relative;
+    display: block;
+    padding: 8rem 0 12rem 0;
+}
+
+.kids .container {
+    position: relative;
+    display: block;
+}
+
+.kids-top {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 4rem;
+}
+
+.kids-list {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.kids-list>li {
+    position: relative;
+    display: block;
+}
+
+.kids-list>li>a {
+    position: relative;
+    display: block;
+}
+
+.kids-list>li>a>img {
+    position: relative;
+    display: block;
+    width: 34rem;
+    height: 50rem;
+}
+
+.kids-list img:hover {
+    opacity: 0.8;
+}
+
+.kids-list>li>h3 {
+    font-size: 5rem;
+    color: #000;
+    font-weight: bold;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    line-height: 6.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.kids-list>li>p {
+    font-size: 2rem;
+    color: #000;
+    font-weight: normal;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    line-height: 3rem;
+    margin-top: 1rem;
+    text-align: center;
+
+}
+
+/* NEWS & SNS  */
+.notice {
+    position: relative;
+    display: block;
+    padding-top: 8rem;
+    padding-bottom: 12rem;
+    background-color: #F5F5F5;
+}
+
+.notice>.container {
+    position: relative;
+    display: block;
+}
+
+.news {
+    position: relative;
+    display: block;
+    background-color: #DDE6FF;
+    text-align: right;
+    line-height: 6rem;
+    color: #555;
+}
+
+.news::before {
+    content: 'NEWS';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14.6rem;
+    height: 6rem;
+    background-color: #002BD2;
+
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Centra No", sans-serif;
+    text-align: center;
+}
+
+.news>span {
+    font-size: 1.4rem;
+    font-family: 'Centra No2', sans-serif;
+    margin-left: 1.5rem;
+}
+
+.news-tit {
+    color: #000;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+.news-tit:hover {
+    text-decoration: underline;
+}
+
+.news-more {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    transition: color 0.5s;
+    margin-left: 35.5rem;
+    margin-right: 1.6rem;
+}
+
+.news-more:hover {
+    color: #002BD2;
+}
+
+.insta {
+    position: relative;
+    display: block;
+    margin-top: 8rem;
+    margin-bottom: 10rem;
+}
+
+.insta>a {
+    width: 100%;
+    font-size: 2rem;
+    color: #000;
+    font-weight: 2.6rem;
+    font-family: 'Centra No2', sans-serif;
+    line-height: 5rem;
+    margin-left: 6.5rem;
+}
+
+.insta>a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: url('../images/pc_insta_profile.png') no-repeat center;
+    background-size: cover;
+}
+
+.insta>nav {
+    position: relative;
+    display: block;
+    margin-top: 3rem;
+}
+
+.insta-list {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.insta-list>li {
+    position: relative;
+    display: block;
+}
+
+.insta-cont {
+    position: relative;
+    display: block;
+    width: 22.8rem;
+    height: 22.8rem;
+}
+
+.insta-img-01 {
+    background: url('../images/inta_cont_01.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.insta-img-02 {
+    background: url('../images/inta_cont_02.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.insta-img-03 {
+    background: url('../images/inta_cont_03.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.insta-img-04 {
+    background: url('../images/inta_cont_04.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.insta-img-05 {
+    background: url('../images/inta_cont_05.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.blog {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.blog-left {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.blog-left>span {
+    position: relative;
+    display: block;
+    padding-left: 4.4rem;
+    color: #000;
+    font-size: 1.8rem;
+    font-family: 'Centra No2', sans-serif;
+    line-height: 2.5rem;
+    padding-bottom: 4.2rem;
+}
+
+.blog-left>span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url('../images/blog.png') no-repeat center;
+}
+
+.blog-left>h2 {
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #000;
+    padding-bottom: 1.7rem;
+}
+
+.blog-left>p {
+    width: 39rem;
+    font-size: 1.5rem;
+    color: #555;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    line-height: 1.46;
+    padding-top: 1.4rem;
+    margin-bottom: 3rem;
+    word-break: keep-all;
+}
+
+.blog-left>a {
+    color: #002BD2;
+    font-family: 'Centra No2', sans-serif;
+    font-size: 1.3rem;
+    text-decoration-line: underline;
+}
+
+.blog-right {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.blog-right a {
+    display: inline-block;
+    width: 62rem;
+    height: 35rem;
+    background: url('../images/blogMainImg.jpg') no-repeat center;
+    font-size: 0;
+}
+
+/* 하단 */
+.footer {
+    position: relative;
+    display: block;
+    background-color: #141414;
+    padding: 6.1rem 0 8.3rem 0;
+}
+
+.footer .container {
+    overflow: hidden;
+}
+
+.f-top {
+    display: block;
+    position: relative;
+    margin-bottom: 4.5rem;
+    overflow: hidden;
+}
+
+.f-logo {
+    float: left;
+    width: 3.2rem;
+    height: 4.5rem;
+    background: url('../images/logo_new.svg') no-repeat center;
+}
+
+.f-sns {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.f-sns>li {
+    display: inline-block;
+    margin-left: 1.8rem;
+}
+
+.f-sns>li>a {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    font-size: 0;
+}
+
+.fb {
+    background: url('../images/facebookIcon.svg') no-repeat center;
+}
+
+.ig {
+    background: url('../images/instaIcon.svg') no-repeat center;
+
+}
+
+.bl {
+    background: url('../images/blogIcon.svg') no-repeat center;
+
+}
+
+.f-left {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.copy {
+    font-size: 1.4rem;
+    color: #fff;
+    font-family: 'Centra No2', sans-serif;
+    line-height: 1.3;
+}
+
+.f-left address {
+    position: relative;
+    display: block;
+    margin-bottom: 4rem;
+}
+
+.f-left address p {
+    font-style: normal;
+    font-size: 1.3rem;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+
+.f-left address p:first-child {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+}
+
+.spc {
+    display: block;
+    font-size: 1.3rem;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+}
+
+.spc span {
+    display: inline-block;
+    width: 6rem;
+    height: 4rem;
+    background: url('../images/spclogo.png') no-repeat center;
+}
+
+.f-right {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 4.7rem;
+}
+
+.f-right>div {
+    position: relative;
+    display: block;
+    padding-bottom: 4.2rem;
+}
+
+.f-right>div a {
+    font-size: 1.3rem;
+    color: #fff;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    text-decoration: underline;
+    margin-right: 7.2rem;
+
+}
+
+.f-right>div a:last-child {
+    color: #1A59FF;
+}
+
+.f-right nav {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.f-right nav ul {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.mainmenu {
+    position: relative;
+    display: block;
+    float: left;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    margin-right: 6.7rem;
+}
+
+.mainmenu ul {
+    padding-top: 2.3rem;
+}
+
+.mainmenu:first-child ul {
+    margin-bottom: 7rem;
+}
+
+.mainmenu ul li {}
+
+.mainmenu ul li a {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 2.35;
+
+}
+
+.chat {
+    font-size: 1.3rem;
+    font-family: 'Centra No2', 'Noto Sans KR', sans-serif;
+    font-weight: 700 !important;
+    text-decoration: underline;
+}
+
+.f-cs {
+    float: right;
+}
+
+.cs {
+    color: #fff;
+    width: 100%;
+    font-weight: 400;
+    line-height: 1.9;
+
+}
+
+.cs-num {
+    font-size: 2.4rem;
+    padding-top: 3.3rem;
+    font-family: 'Centra No2', sans-serif;
+
+}
+
+.cs-time {
+    font-size: 1.3rem;
+    padding-top: 1.6rem;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.cs-time span {
+    font-size: 1.2rem;
+    color: #999;
+    font-family: "Malgun Gothic", sans-serif;
+}
